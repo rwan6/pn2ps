@@ -10,12 +10,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "0.0.1"),
-        .package(url: "https://github.com/swiftcsv/SwiftCSV", from: "0.0.1")
+        .package(url: "https://github.com/swiftcsv/SwiftCSV", from: "0.0.1"),
+        .package(name: "Cryptor", url: "https://github.com/IBM-Swift/BlueCryptor.git", from: "1.0.0")
     ],
     targets: [
         .target(name: "PN2PS", dependencies: [
             .product(name: "ArgumentParser", package: "swift-argument-parser"),
-            .product(name: "SwiftCSV", package: "SwiftCSV")
+            .product(name: "SwiftCSV", package: "SwiftCSV"),
+            "Cryptor"
         ])
     ]
 )
